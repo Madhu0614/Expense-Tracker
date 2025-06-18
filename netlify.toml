@@ -1,7 +1,3 @@
 [build]
   command = "npm run build"
-  publish = ".next"
-
-[[edge_functions]]
-  path = "/*"
-  function = "next"
+  publish = "out"
