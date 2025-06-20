@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from "react";
-import { getExpenses, Expense } from "@/lib/expenses";
+import { getExpenses } from "@/lib/expenses";
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 
