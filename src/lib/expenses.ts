@@ -3,29 +3,130 @@ export type Expense = {
   id: number;
   title: string;
   amount: number;
-  category: string;
-  date: string; 
+  category: "Subscription" | "Software" | "Hosting" | "Other";
+  frequency: "Monthly" | "Yearly" | "One-time";
+  date: string;
+  employee: string; 
 };
 
 export const getExpenses = async (): Promise<Expense[]> => {
   return [
-    { id: 1, title: "Groceries", amount: 150, category: "Food", date: "2025-06-16" },
-    { id: 2, title: "Uber", amount: 50, category: "Transport", date: "2025-06-15" },
-    { id: 3, title: "Dinner", amount: 200, category: "Food", date: "2025-04-14" },
-    { id: 4, title: "Gym", amount: 100, category: "Health", date: "2025-04-23" },
-    { id: 5, title: "Movie", amount: 300, category: "Entertainment", date: "2025-04-22" },
-    { id: 6, title: "Shopping", amount: 500, category: "Shopping", date: "2025-04-21" },
-    { id: 7, title: "Lunch", amount: 120, category: "Food", date: "2025-04-20" },
-    { id: 8, title: "Taxi", amount: 80, category: "Transport", date: "2025-04-19" },
-    { id: 9, title: "Dinner with friends", amount: 250, category: "Food", date: "2025-04-18" },
-    { id: 10, title: "Concert tickets", amount: 400, category: "Entertainment", date: "2025-04-17" },
-    { id: 11, title: "Clothes shopping", amount: 600, category: "Shopping", date: "2025-04-16" },
-    { id: 12, title: "Coffee with a friend", amount: 70, category: "Food", date: "2025-04-15" },
-    { id: 13, title: "Bus fare", amount: 30, category: "Transport", date: "2025-04-14" },
-    { id: 14, title: "Yoga class", amount: 90, category: "Health", date: "2025-04-13" },
-    { id: 15, title: "Dinner at restaurant", amount: 220, category: "Food", date: "2025-04-12" },
-    { id: 16, title: "Gas refill", amount: 1500, category: "Transport", date: "2025-04-11" },
-    { id: 17, title: "Grocery shopping", amount: 8000, category: "Food", date:"2025-04-10"},
-    { id :18 ,title:"Birthday gift for friend" ,amount :2000 ,category:"Shopping" ,date:"2025-04-09"},
-  ];
+    {
+      id: 1,
+      title: "Outlook 365 Family (Johnsonb2b)",
+      amount: 619,
+      category: "Subscription",
+      frequency: "Monthly",
+      date: "2025-06-07",
+      employee: "Mary Linda (hema)",
+    },
+    {
+      id: 2,
+      title: "Outlook 365 Family (Freshdata)",
+      amount: 619,
+      category: "Subscription",
+      frequency: "Monthly",
+      date: "2025-07-05",
+      employee: "Olivia Smith (Deepika)",
+    },
+    {
+      id: 3,
+      title: "Notion",
+      amount: 490,
+      category: "Software",
+      frequency: "Monthly",
+      date: "2025-06-02",
+      employee: "Alice",
+    },
+    {
+      id: 4,
+      title: "Outlook 365 Family (worklite)",
+      amount: 619,
+      category: "Subscription",
+      frequency: "Monthly",
+      date: "2025-06-14",
+      employee: "Mary Linda (hema)",
+    },
+    {
+      id: 5,
+      title: "Outlook 365 Family (ninja)",
+      amount: 619,
+      category: "Subscription",
+      frequency: "Monthly",
+      date: "2025-06-14",
+      employee: "Bryan Lawrence (Venu)",
+    },
+    {
+      id: 6,
+      title: "Outlook 365 Family (Freshdata)",
+      amount: 619,
+      category: "Subscription",
+      frequency: "Monthly",
+      date: "2025-06-14",
+      employee: "Helen Smith (Anjali)",
+    },
+    {
+      id: 7,
+      title: "Outlook 365 Family (leads)",
+      amount: 619,
+      category: "Subscription",
+      frequency: "Monthly",
+      date: "2025-06-17",
+      employee: "Paul Alexander ( rakesh)",
+    },
+    {
+      id: 8,
+      title: "Outlook 365 Family (leadmgr)",
+      amount: 619,
+      category: "Subscription",
+      frequency: "Monthly",
+      date: "2025-06-21",
+      employee: "michael D(kamalakar)",
+    },
+    {
+      id: 9,
+      title: "Outlook 365 Family (maxleads)",
+      amount: 619,
+      category: "Subscription",
+      frequency: "Monthly",
+      date: "2025-06-28",
+      employee: "Alex bob ( sujji)",
+    },
+    {
+      id: 10,
+      title: "Outlook 365 Family  (ninja)",
+      amount: 490,
+      category: "Subscription",
+      frequency: "Monthly",
+      date: "2025-06-14",
+      employee: "Bryan Lawrence (Venu)",
+    },
+    {
+      id: 11,
+      title: "Notion",
+      amount: 490,
+      category: "Software",
+      frequency: "Monthly",
+      date: "2025-06-02",
+      employee: "Alice",
+    },
+    {
+      id: 12,
+      title: "Notion",
+      amount: 490,
+      category: "Software",
+      frequency: "Monthly",
+      date: "2025-06-02",
+      employee: "Alice",
+    },
+    {
+      id: 13,
+      title: "Notion",
+      amount: 490,
+      category: "Software",
+      frequency: "Monthly",
+      date: "2025-06-02",
+      employee: "Alice",
+    },
+  ]
 };

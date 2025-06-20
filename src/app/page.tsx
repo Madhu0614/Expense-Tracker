@@ -2,6 +2,9 @@
 
 import { useQuery } from "@tanstack/react-query";
 import { getExpenses } from "../lib/expenses";
+import ExpenseList from "../components/ExpenseList";
+import { Expense } from "../lib/expenses";
+
 
 export default function Home() {
   const { data, isLoading } = useQuery({ queryKey: ["expenses"], queryFn: getExpenses });
@@ -13,20 +16,7 @@ export default function Home() {
       {isLoading ? (
         <p className="text-muted-foreground">Loading...</p>
       ) : (
-        data?.map((exp) => (
-          <div
-            key={exp.id}
-            className="p-4 rounded-xl border shadow-sm flex justify-between items-center"
-          >
-            <div>
-              <p className="font-medium">{exp.title}</p>
-              <p className="text-sm text-muted-foreground">
-                {exp.category} • {exp.date}
-              </p>
-            </div>
-            <p className="font-semibold">₹{exp.amount}</p>
-          </div>
-        ))
+        <ExpenseList expenses={data as Expense[]} />
       )}
     </div>
   );

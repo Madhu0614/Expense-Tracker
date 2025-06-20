@@ -3,7 +3,7 @@
 
 import { useQuery } from "@tanstack/react-query";
 import { getExpenses } from "@/lib/expenses";
-import ExpenseChart from "@/components/ExpenseChart";
+import AdvancedChartTabs from "@/components/ExpenseChart"; // Make sure this file exists
 import { groupExpensesByPeriod } from "@/lib/grouping";
 
 export default function ReportsPage() {
@@ -12,31 +12,23 @@ export default function ReportsPage() {
     queryFn: getExpenses,
   });
 
-  const dailyData = groupExpensesByPeriod(expenses, "daily");
-  const weeklyData = groupExpensesByPeriod(expenses, "weekly");
-  const monthlyData = groupExpensesByPeriod(expenses, "monthly");
+  const dailyData = groupExpensesByPeriod(expenses || [], "daily");
+  const weeklyData = groupExpensesByPeriod(expenses || [], "weekly");
+  const monthlyData = groupExpensesByPeriod(expenses || [], "monthly");
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 max-w-4xl mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold">Reports</h1>
 
       {isLoading ? (
         <p className="text-muted-foreground">Loading reports...</p>
       ) : (
-        <>
-          <div>
-            <h2 className="text-xl font-semibold mb-2">Daily Expenses</h2>
-            <ExpenseChart data={dailyData} />
-          </div>
-          <div>
-            <h2 className="text-xl font-semibold mb-2">Weekly Expenses</h2>
-            <ExpenseChart data={weeklyData} />
-          </div>
-          <div>
-            <h2 className="text-xl font-semibold mb-2">Monthly Expenses</h2>
-            <ExpenseChart data={monthlyData} />
-          </div>
-        </>
+      <AdvancedChartTabs
+          dailyData={groupExpensesByPeriod(expenses, "daily")}
+          weeklyData={groupExpensesByPeriod(expenses, "weekly")}
+          monthlyData={groupExpensesByPeriod(expenses, "monthly")}
+        />
+
       )}
     </div>
   );

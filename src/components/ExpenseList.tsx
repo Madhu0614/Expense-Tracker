@@ -15,9 +15,9 @@ export default function ExpenseList({ expenses }: { expenses: Expense[] }) {
               {exp.category} • {exp.date}
             </p>
           </div>
-          <p className="font-semibold">₹{exp.amount}</p>
+          <p className="font-semibold  text-green-700">₹{exp.amount}</p>
         </div>
       ))}
     </div>
   );
-}
+} 
