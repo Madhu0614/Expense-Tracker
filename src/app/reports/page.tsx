@@ -12,10 +12,6 @@ export default function ReportsPage() {
     queryFn: getExpenses,
   });
 
-  const dailyData = groupExpensesByPeriod(expenses || [], "daily");
-  const weeklyData = groupExpensesByPeriod(expenses || [], "weekly");
-  const monthlyData = groupExpensesByPeriod(expenses || [], "monthly");
-
   return (
     <div className="space-y-8 max-w-4xl mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold">Reports</h1>

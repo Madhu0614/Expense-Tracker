@@ -8,7 +8,6 @@ import {
   Tooltip,
   ResponsiveContainer,
   CartesianGrid,
-  LabelList,
 } from "recharts";
 import { Tab } from "@headlessui/react";
 import clsx from "clsx";
